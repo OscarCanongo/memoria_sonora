@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import CardAudio from './CardAudio';
 
 const Exhibition = () => {
     return (  
-        <p>Aqui va las cuadriculas con los audios</p>
+        <Fragment>
+            <h1 align="center">Exposición</h1>
+            <div className = "row mt-5">
+                <CardAudio/>
+                <CardAudio/>
+                <CardAudio/>
+                <CardAudio/>
+                <CardAudio/>
+                <CardAudio/>
+                <CardAudio/>
+                <CardAudio/>
+            </div>
+        </Fragment>    
     );
 }
  
