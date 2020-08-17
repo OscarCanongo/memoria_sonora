@@ -20,7 +20,7 @@ const Description = () => {
                     Lo que hace el contexto en que está situado.
           </div>
           <div class="col-sm">
-            <img src = {imagen} className="w-75" alt="MuiLogo"/>
+            <img  src = {imagen} className="w-75" alt="MuiLogo"/>
           </div>
         </div>
       </div>
