@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.box {
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    display: flex;
+}
+.box img {
+    width: 40%;
+    text-align: justify;
+}
+
+.txt {
+    width: 50%;
+    text-align: justify;
+    font-family: Public Sans;
+}

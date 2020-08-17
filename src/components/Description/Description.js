@@ -1,5 +1,6 @@
 import React from 'react';
 import imagen from '../../images/MUI_SONORO-04.png';
+import './Description.css';
 
 const Description = () => {
     return (
@@ -10,15 +11,16 @@ const Description = () => {
           </div>
           </div>
           <div class="row">
-          <div class="col-sm" >
-            El MUI (Museo Urbano Interactivo) busca ser un espacio fisico y conceptual,
-            en donde se desarrollan personas concientes, capaces de producir un México
-            con futuro en el que llega a ser una alternativa global; a través de las
-            herramientas propias de las industrias creativas de las prácticas artísticas actuales.
-            Lo que hace desde el contexto en el que esta situado.
+          <div class="txt">
+                    El <b>MUI (Museo Urbano Interactivo)</b> busca ser un espacio físico
+                    y conceptual, en donde se desarrollan personas conscientes,
+                    capaces de producir un México con futuro en el que llega a ser
+                    una alternativa global; a través de las herramientas propias
+                    de las industrias creativas y las prácticas artísticas actuales.
+                    Lo que hace el contexto en que está situado.
           </div>
           <div class="col-sm">
-            <img className = "img" src = {imagen} className="w-75"/>
+            <img src = {imagen} className="w-75" alt="MuiLogo"/>
           </div>
         </div>
       </div>
