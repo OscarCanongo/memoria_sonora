@@ -1,8 +1,12 @@
 import React from 'react';
+import Logo from '../../images/memoria_sonora_logo.png';
+import './Introduction.css';
 
 const Header = () => {
     return (  
-        <p>Aqui va la Memoria sonora</p>
+        <div className="container-div">
+            <img src={Logo} alt="Memoria Sonora Logo"></img>
+        </div>
     );
 }
  
