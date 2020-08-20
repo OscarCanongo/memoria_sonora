@@ -6,7 +6,9 @@ const AudioSchema = mongoose.Schema({
       require: true
     },
     audio: {
-      type: true
+      type: String,
       require: true
     }
 });
+
+module.exports = mongoose.model('Audio', AudioSchema);

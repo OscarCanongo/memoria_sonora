@@ -3,8 +3,7 @@ const router = express.Router();
 const audioController = require('../controllers/audioController');
 
 router.post('/',
-
-    usuarioController.crearUsuario
+    audioController.crearAudio
 );
 
 module.exports = router
