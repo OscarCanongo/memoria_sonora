@@ -14,7 +14,7 @@ app.use(express.json({ extended: true}));
 const PORT = process.env.PORT || 4000;
 
 //Importar rutas
-app.use('/audio', require('./routes/audio'));
+app.use('/audio', require('./routes/audios'));
 
 //Arrancar server
 app.listen(PORT, () => {
