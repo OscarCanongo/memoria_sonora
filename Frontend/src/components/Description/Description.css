@@ -1,21 +1,27 @@
 h1 {
     text-align: center;
     margin-bottom: 50px;
-}
-
-.box {
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    display: flex;
-}
-.box img {
-    width: 40%;
-    text-align: justify;
+    font-family: 'Space Mono';
 }
 
 .txt {
     width: 50%;
     text-align: justify;
-    font-family: Public Sans;
+    font-family: 'Public Sans';
+}
+
+.img-fluid{
+    right: 50px;
+    position: absolute;
+    top: -170px;
+    width: 500;
+    height: 500;
+}
+
+@font-face{
+    font-family: 'Public Sans';
+    src: local('PublicSans'), url(../../fonts/PublicSans-VariableFont_wght.ttf) format('truetype');
+
+    font-family: 'Space Mono';
+    src: local('SpaceMono'), url(../../fonts/SpaceMono-Regular.ttf) format(truetype);
 }
