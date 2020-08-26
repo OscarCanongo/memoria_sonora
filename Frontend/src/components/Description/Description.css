@@ -13,15 +13,21 @@ h1 {
 .img-fluid{
     right: 50px;
     position: absolute;
-    top: -170px;
+    top: -150px;
     width: 500;
     height: 500;
 }
 
 @font-face{
     font-family: 'Public Sans';
-    src: local('PublicSans'), url(../../fonts/PublicSans-VariableFont_wght.ttf) format(truetype);
+    src: url(../../fonts/PublicSans-VariableFont_wght.ttf);
+    font-style: normal;
+    font-weight: 300;
+}
 
+@font-face{
     font-family: 'Space Mono';
-    src: local('SpaceMono'), url(../../fonts/SpaceMono-Regular.ttf) format(truetype);
+    src: url(../../fonts/SpaceMono-Regular.ttf);
+    font-style: normal;
+    font-weight: 800;
 }
