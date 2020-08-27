@@ -4,4 +4,8 @@
     Width: 100%;
     Align-Items: center;
     Justify-Content: center;
+    background: url("https://i.pinimg.com/originals/61/9b/1a/619b1ab7ac25a95f087e3df19637385c.gif") no-repeat fixed center;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
 }
