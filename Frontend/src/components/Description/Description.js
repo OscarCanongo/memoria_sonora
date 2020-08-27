@@ -1,8 +1,8 @@
 import React from 'react';
 import imagen from '../../images/MUI_SONORO-04.png';
 import './Description.css';
-import PublicSans from '../../fonts/PublicSans-VariableFont_wght.ttf';
-import SpaceMono from '../../fonts/SpaceMono-Regular.ttf';
+//import PublicSans from '../../fonts/PublicSans-VariableFont_wght.ttf';
+//import SpaceMono from '../../fonts/SpaceMono-Regular.ttf';
 
 const Description = () => {
     return (
