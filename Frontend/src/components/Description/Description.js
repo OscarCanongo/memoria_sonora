@@ -1,6 +1,7 @@
 import React from 'react';
 import imagen from '../../images/MUI_SONORO-04.png';
 import './Description.css';
+import SplitText from 'react-pose-text';
 //import PublicSans from '../../fonts/PublicSans-VariableFont_wght.ttf';
 //import SpaceMono from '../../fonts/SpaceMono-Regular.ttf';
 
@@ -15,13 +16,15 @@ const Description = () => {
         <div class="container-sm">
           <div class="row">
             <div class="col-sm">
-              <div class="txt">
-                    <p>El <b>MUI (Museo Urbano Interactivo)</b> busca ser un espacio físico
+              <div class="txt" >
+              <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
+                El MUI (Museo Urbano Interactivo) busca ser un espacio físico
                     y conceptual, en donde se desarrollan personas conscientes,
                     capaces de producir un México con futuro en el que llega a ser
-                    una alternativa global.</p> <p>A través de las herramientas propias
+                    una alternativa global.A través de las herramientas propias
                     de las industrias creativas y las prácticas artísticas actuales.
-                    Lo que hace el contexto en que está situado.</p>
+                    Lo que hace el contexto en que está situado.
+                    </SplitText>
               </div>
             </div>
           </div>
@@ -36,5 +39,13 @@ const Description = () => {
       </div>
     );
 }
+const charPoses = {
+  exit: { opacity: 0, y: 20 },
+  enter: {
+    opacity: 1,
+    y: 0,
+    delay: ({ charIndex }) => charIndex * 30
+  }
+};
 
 export default Description;
