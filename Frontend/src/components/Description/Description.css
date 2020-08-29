@@ -5,17 +5,13 @@ h1 {
 }
 
 .txt {
-    width: 50%;
+    width: 100%;
     text-align: justify;
     font-family: 'Public Sans';
 }
 
 .img-fluid{
-    right: 50px;
-    position: absolute;
-    top: -150px;
-    width: 500;
-    height: 500;
+    width:100%;
 }
 
 @font-face{

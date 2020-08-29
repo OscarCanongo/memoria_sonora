@@ -2,8 +2,6 @@ import React from 'react';
 import imagen from '../../images/MUI_SONORO-04.png';
 import './Description.css';
 import SplitText from 'react-pose-text';
-//import PublicSans from '../../fonts/PublicSans-VariableFont_wght.ttf';
-//import SpaceMono from '../../fonts/SpaceMono-Regular.ttf';
 
 const Description = () => {
     return (
@@ -13,29 +11,29 @@ const Description = () => {
             <h1 class="text-center">Museo Urbano Interactivo</h1>
           </div>
         </div>
-        <div class="container-sm">
-          <div class="row">
-            <div class="col-sm">
-              <div class="txt" >
-              <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
-                El MUI (Museo Urbano Interactivo) busca ser un espacio físico
-                    y conceptual, en donde se desarrollan personas conscientes,
-                    capaces de producir un México con futuro en el que llega a ser
-                    una alternativa global.A través de las herramientas propias
-                    de las industrias creativas y las prácticas artísticas actuales.
-                    Lo que hace el contexto en que está situado.
+
+            <div className = "row">
+              <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="txt" >
+                    <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
+                        El MUI (Museo Urbano Interactivo) busca ser un espacio físico
+                        y conceptual, en donde se desarrollan personas conscientes,
+                        capaces de producir un México con futuro en el que llega a ser
+                        una alternativa global.A través de las herramientas propias
+                        de las industrias creativas y las prácticas artísticas actuales.
+                        Lo que hace el contexto en que está situado.
                     </SplitText>
+                </div>
+              </div>
+              <div className = "col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+              </div>
+              <div className = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div class = "img-fluid">
+                <img  src = {imagen} class="img-fluid float-right" alt="MuiLogo"/>
+              </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="container-sm">
-          <div class = "row">
-            <div div class = "col-md-3 ml-md-auto">
-              <img  src = {imagen} class="img-fluid float-right" alt="MuiLogo"/>
-            </div>
-          </div>
-        </div>
       </div>
     );
 }
