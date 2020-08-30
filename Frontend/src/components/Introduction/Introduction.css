@@ -1,12 +1,11 @@
-.container-div {
-    Display: flex;
-    Height: 100vh;
-    Width: 100%;
-    Align-Items: center;
-    Justify-Content: center;
-    background: url("../../images/portada25.gif") no-repeat fixed center;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
-}
+
+body, html {
+    height: 100%;
+    }
+    .bg {
+    background-image: url("../../images/portada25.gif");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
