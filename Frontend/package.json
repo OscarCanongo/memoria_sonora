@@ -11,10 +11,18 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
+    "react-audio-player": "^0.13.0",
     "react-dom": "^16.13.1",
+    "react-h5-audio-player": "^3.3.2",
+    "react-howler": "^3.7.5",
+    "react-jinke-music-player": "^4.17.1",
+    "react-media-player": "^0.7.9",
+    "react-player": "^2.6.1",
     "react-pose": "^4.0.10",
     "react-pose-text": "^3.1.0",
-    "react-scripts": "3.4.2"
+    "react-scripts": "3.4.2",
+    "react-soundcloud-player": "^1.1.1",
+    "react-soundplayer": "^1.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
