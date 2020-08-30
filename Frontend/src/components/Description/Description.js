@@ -1,7 +1,9 @@
 import React from 'react';
 import imagen from '../../images/MUI_SONORO-04.png';
+import yourFileHover from '../../images/morado.png';
 import './Description.css';
 import SplitText from 'react-pose-text';
+import HoverImage from "react-hover-image";
 
 const Description = () => {
     return (
@@ -30,7 +32,7 @@ const Description = () => {
               </div>
               <div className = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
               <div class = "img-fluid">
-                <img  src = {imagen} class="img-fluid float-right" alt="MuiLogo"/>
+                <HoverImage src={imagen} hoverSrc={yourFileHover}  class="img-fluid float-right width: 100%" style={{width : '100%'}} alt="MuiLogo"/>
               </div>
               </div>
             </div>
@@ -45,5 +47,6 @@ const charPoses = {
     delay: ({ charIndex }) => charIndex * 30
   }
 };
+
 
 export default Description;
