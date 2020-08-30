@@ -44,7 +44,7 @@ const charPoses = {
   enter: {
     opacity: 1,
     y: 0,
-    delay: ({ charIndex }) => charIndex * 30
+    delay: ({ charIndex }) => charIndex * 50
   }
 };
 
