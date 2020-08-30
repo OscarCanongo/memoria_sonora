@@ -1,22 +1,17 @@
-const express = require('express');
-const conection= require('./config/db');
+const express = require('express')
+const cors = require('cors');
+const morgan = require('morgan');
 
-//Crear el servidor
+const trackRoutes = require('./routes/audios');
+
 const app = express();
 
-//Conectar a la base de datos
-conection();
+// middlewares
+app.use(morgan('dev'));
+app.use(cors());
 
-//Habilitar express.json
-app.use(express.json({ extended: true}));
+// routes
+app.use('/audios', trackRoutes);
 
-//Puerto del server
-const PORT = process.env.PORT || 4000;
-
-//Importar rutas
-app.use('/audio', require('./routes/audios'));
-
-//Arrancar server
-app.listen(PORT, () => {
-    console.log(`El server esta corriendo en el puerto ${PORT}`);
-});
+app.listen(4000);
+console.log('Server on port', 4000);
