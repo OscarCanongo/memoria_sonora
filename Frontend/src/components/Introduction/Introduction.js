@@ -5,7 +5,7 @@ import './Introduction.css';
 const Header = () => {
     return (
         <div className="container-div">
-            <img className = "imagen" src={Logo} alt="Memoria Sonora Logo"></img>
+            <img className = "imagen" class="img-fluid" src={Logo} alt="Memoria Sonora Logo"></img>
         </div>
     );
 }
