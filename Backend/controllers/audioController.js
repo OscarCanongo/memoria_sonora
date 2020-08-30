@@ -1,52 +1,86 @@
-const Audio = require ('../models/Audio');
-const { validationResult } = require('express-validator');
+const { ObjectID, GridFSBucket } = require("mongodb");
+const { getConnection } = require("../config/db.js");
+const { Readable } = require('stream');
+const multer = require('multer');
 
-//Post audios
-exports.crearAudio = async (req, res) => {
+const getTrack = (req, res) => {
 
-  //Revisar si hay errores
-  const error = validationResult(req);
-
-  if (!error.isEmpty()) {
-      return res.status(400).json({ error: error.array() })
-  }
-
-  const { audio} = req.body;
-
+  let trackID;
   try {
-
-      //Revisa que el audio sea unico
-      let audioBase = await Audio.findOne({ audio });
-
-      if (audioBase) {
-          return res.sustatus(400).json({ msg: 'El audio ya existe'});
-      }
-
-      //Crea un nuevo audio
-      audioBase = new Audio(req.body);
-
-      //Guarda el audio
-      await audioBase.save();
-
-      //Mensaje de confirmacion
-      res.json({ msg: 'Audio creado correctamente'});
-
+    trackID = new ObjectID(req.params.trackID);
   } catch (error) {
-    res.status(400).send("Hubo un error");
-    console.log(error);
+    return res.status(400).json({ message: "Invalid track in URL parameter." });
   }
+
+  res.set("content-type", "audio/mp3");
+  res.set("accept-ranges", "bytes");
+
+  const db = getConnection();
+  let bucket = new GridFSBucket(db, {
+    bucketName: 'tracks'
+  });
+
+  let downloadStream = bucket.openDownloadStream(trackID);
+
+  downloadStream.on('data', chunk => {
+    res.write(chunk);
+  });
+
+  downloadStream.on('error', () => {
+    res.sendStatus(404);
+  });
+
+  downloadStream.on('end', () => {
+    res.end();
+  });
 }
 
-//Get audios
-exports.obtenerAudios = async (req, res) => {
-    try {
+const uploadTrack = (req, res) => {
+  const storage = multer.memoryStorage();
+  const upload = multer({storage, limits: {
+    fields: 1, // 1 non-file field
+    fileSize: 20000000, // 9mb maximum size
+    files: 1, // maximum 1 file
+    parts: 2 // files + fields
+  }})
 
-        const audios = await Audio.find();
-        res.json({ audios });
-
-    } catch (error) {
-
-        console.log(error);
-        res.status(500).send('Hubo un error');
+  upload.single('track')(req,res, (err) => {
+    if (err) {
+      console.log(err);
+      // return res.status(400).json({message: 'Upload Request Validation Failed'});
+      return res.status(400).json({message: err.message});
+    } else if (!req.body.name) {
+      return res.status(400).json({message: 'No track name in request body'});
     }
+
+    let trackName = req.body.name;
+
+    // convert buffer to readable stream
+    const readableTrackStream = new Readable();
+    readableTrackStream.push(req.file.buffer);
+    readableTrackStream.push(null);
+
+    const db = getConnection();
+    let bucket = new GridFSBucket(db, {
+      bucketName: 'tracks'
+    });
+
+    let uploadStream = bucket.openUploadStream(trackName);
+    let id = uploadStream.id;
+    readableTrackStream.pipe(uploadStream);
+
+    uploadStream.on('error', () => {
+      return res.status(500).json({ message: "Error uploading file" });
+    });
+
+    uploadStream.on('finish', () => {
+      return res.status(201).json({ message: "File uploaded successfully, stored under Mongo ObjectID: " + id });
+    });
+
+  })
+}
+
+module.exports = {
+  getTrack,
+  uploadTrack
 }

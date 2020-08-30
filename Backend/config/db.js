@@ -1,19 +1,21 @@
-const mongoose = require('mongoose');
+const { MongoClient } = require('mongodb');
 require('dotenv').config({ path: 'string.env' });
 
-const conectarDB = async () => {
-    try {
-        await mongoose.connect(process.env.DB, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useFindAndModify: false
-        });
-        console.log('DB Conectada');
-    } catch (error) {
-        console.log('hubo un error')
-        console.log(error);
-        process.exit(1); // Detener la app
-    }
-}
+let db;
 
-module.exports = conectarDB;
+MongoClient.connect(process.env.DB, {useUnifiedTopology: true}, (err, client) => {
+  if (err) {
+    console.log(err);
+    process.exit(0);
+  }
+  db = client.db('audios');
+  console.log('DB is connected')
+});
+
+const getConnection = () => {
+  return db;
+};
+
+module.exports = {
+  getConnection
+};
