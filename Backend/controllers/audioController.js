@@ -3,6 +3,17 @@ const { getConnection } = require("../config/db.js");
 const { Readable } = require('stream');
 const multer = require('multer');
 
+const getTracks = (req, res) => {
+
+  const db = getConnection();
+
+  var collection = db.collection('tracks.files');
+  //collection.find()
+
+  console.log(collection.find());
+
+}
+
 const getTrack = (req, res) => {
 
   let trackID;
