@@ -19,6 +19,8 @@
     "react-howler": "^3.7.5",
     "react-jinke-music-player": "^4.17.1",
     "react-media-player": "^0.7.9",
+    "react-music": "^1.0.3",
+    "react-native": "^0.63.2",
     "react-player": "^2.6.1",
     "react-pose": "^4.0.10",
     "react-pose-text": "^3.1.0",

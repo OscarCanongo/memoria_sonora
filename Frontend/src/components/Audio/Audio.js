@@ -1,13 +1,15 @@
 import React from 'react';
-import Player from 'react-soundcloud-player';
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 
 const Audio = () => {
     return (
-        <Player
-          client_id="c5a171200f3a0a73a523bba14a1e0a29"
-          audio_id="97647221"
-          title="SUENA Y EMOCIONA"
-        />
+      <AudioPlayer
+        autoPlay
+        src="https://firebasestorage.googleapis.com/v0/b/memoriasonora-e2da7.appspot.com/o/Copia%20de%20Adriana%20Carvente.mp3?alt=media&token=38e2e7c8-4723-40f6-9878-4ef3011871df"
+        onPlay={e => console.log("onPlay")}
+        // other props here
+      />
     );
 }
 
