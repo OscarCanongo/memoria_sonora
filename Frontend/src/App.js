@@ -3,7 +3,7 @@ import Introduction from './components/Introduction/Introduction';
 import Description from './components/Description/Description';
 import Exhibitions from './components/Exhibition/Exhibition';
 import Footer from './components/Footer/Footer';
-import Audio from './components/Audio/Audio';
+import VisualDemo from './components/Audio/AudioDataContainer';
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
     <Fragment>
       <Introduction/>
       <Description/>
-      <Audio/>
+      <VisualDemo/>
       <div className = "container mt-5">
         <Exhibitions/>
       </div>
