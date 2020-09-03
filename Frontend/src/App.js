@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Introduction from './components/Introduction/Introduction';
 import Description from './components/Description/Description';
 import Exhibitions from './components/Exhibition/Exhibition';
@@ -7,13 +7,21 @@ import VisualDemo from './components/Audio/AudioDataContainer';
 
 function App() {
 
+  //State
+  const[mostrar, setMostrar] = useState(false);
+
   return (
     <Fragment>
       <Introduction/>
       <Description/>
-      <VisualDemo/>
+      { mostrar
+        ? <VisualDemo/>
+        : null
+      }
       <div className = "container mt-5">
-        <Exhibitions/>
+        <Exhibitions
+          setMostrar = {setMostrar}
+        />
       </div>
       <Footer/>
     </Fragment>

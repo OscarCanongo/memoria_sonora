@@ -1,22 +1,33 @@
 import React, { Fragment } from 'react';
 import CardAudio from './CardAudio';
 
-const Exhibition = () => {
-    return (  
+const Exhibition = ({setMostrar}) => {
+
+    return (
         <Fragment>
             <h1 align="center">Exposición</h1>
             <div className = "row mt-5">
-                <CardAudio/>
-                <CardAudio/>
-                <CardAudio/>
-                <CardAudio/>
-                <CardAudio/>
-                <CardAudio/>
-                <CardAudio/>
-                <CardAudio/>
+                <CardAudio
+                    setMostrar = {setMostrar}
+                />
+                <CardAudio
+                    setMostrar = {setMostrar}
+                />
+                <CardAudio
+                    setMostrar = {setMostrar}
+                />
+                <CardAudio
+                    setMostrar = {setMostrar}
+                />
+                <CardAudio
+                    setMostrar = {setMostrar}
+                />
+                <CardAudio
+                    setMostrar = {setMostrar}
+                />
             </div>
-        </Fragment>    
+        </Fragment>
     );
 }
- 
+
 export default Exhibition;

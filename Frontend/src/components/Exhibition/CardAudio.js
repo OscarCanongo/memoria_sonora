@@ -3,7 +3,11 @@ import IconButton from '@material-ui/core/IconButton';
 import imagen from "./Imagenes/ola.svg";
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
-const CardAudio = () => {
+const CardAudio = ({setMostrar}) => {
+
+  const onClickMostrar = () => {
+    setMostrar(true);
+  }
 
   return (
       <div className = "col-md-4 mb-3">
@@ -15,6 +19,7 @@ const CardAudio = () => {
             <IconButton className ="btn btn-secondary">
               <PlayCircleOutlineIcon
                 style={{ fontSize: 50 }}
+                onClick={onClickMostrar}
               />
             </IconButton>
           </div>
