@@ -12,10 +12,11 @@ class AudioDataContainer extends React.Component {
 
     initializeAudioAnalyser = () => {
         const audioFile = new Audio();
+        audioFile.crossOrigin = "anonymous";
         const audioContext = new AudioContext();
         const source = audioContext.createMediaElementSource(audioFile);
         const analyser = audioContext.createAnalyser();
-        audioFile.src = soundFile;
+        audioFile.src = "https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/memoriasonora-e2da7.appspot.com/o/Copia%20de%20Adriana%20Carvente.mp3?alt=media&token=ab424f7d-e02e-41a8-85be-891022d18c3e";
         analyser.fftSize = 64
         source.connect(audioContext.destination);
         source.connect(analyser);

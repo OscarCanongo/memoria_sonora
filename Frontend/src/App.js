@@ -8,7 +8,7 @@ import VisualDemo from './components/Audio/AudioDataContainer';
 function App() {
 
   //State
-  const[mostrar, setMostrar] = useState(false);
+  const[mostrar, setMostrar] = useState(true);
 
   return (
     <Fragment>
