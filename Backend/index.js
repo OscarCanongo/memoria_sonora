@@ -11,12 +11,12 @@ conection();
 app.use(express.json({ extended: true}));
 
 //Puerto del server
-const PORT = process.env.PORT || 4000;
+const port = process.env.PORT || 4000
 
 //Importar rutas
 app.use('/', require('./routes/audios'));
 
 //Arrancar server
-app.listen(PORT, () => {
-    console.log(`El server esta corriendo en el puerto ${PORT}`);
+app.listen(port, () => {
+    console.log(`El server esta corriendo en el puerto ${port}`);
 });
