@@ -1,10 +1,20 @@
-const { Router } = require("express");
-const router = Router();
+const express = require('express');
+const router = express.Router();
+const audioController = require('../controllers/audioController');
+const { check } = require ('express-validator');
 
-const { getTrack, uploadTrack } = require('../controllers/audioController')
+//Agregar un audio
+router.post('/',
+    [
+        check('nombre', 'El nombre es obligatorio').not().isEmpty(),
+        check('audio', 'El audio es obligatorio').not().isEmpty(),
+    ],
+    audioController.crearAudio
+);
 
-router.get("/:trackID", getTrack);
-
-router.post('/', uploadTrack);
+//Obtener todos los audios
+router.get('/',
+    audioController.obtenerAudios
+)
 
 module.exports = router;
