@@ -1,6 +1,5 @@
 import React from 'react';
 import VisualDemo from './VisualDemo';
-import soundFile from './audio/GummyBearz.mp3'
 
 class AudioDataContainer extends React.Component {
 
@@ -11,6 +10,7 @@ class AudioDataContainer extends React.Component {
     }
 
     initializeAudioAnalyser = () => {
+        
         const audioFile = new Audio();
         audioFile.crossOrigin = "anonymous";
         const audioContext = new AudioContext();
@@ -35,15 +35,14 @@ class AudioDataContainer extends React.Component {
 
     render() {
 
-        return ( <
-            div >
-            <
-            VisualDemo initializeAudioAnalyser = { this.initializeAudioAnalyser }
-            frequencyBandArray = { this.frequencyBandArray }
-            getFrequencyData = { this.getFrequencyData }
-            audioData = { this.state.audioData }
-            /> < /
-            div >
+        return ( 
+            < div >
+                < VisualDemo initializeAudioAnalyser = { this.initializeAudioAnalyser }
+                    frequencyBandArray = { this.frequencyBandArray }
+                    getFrequencyData = { this.getFrequencyData }
+                    audioData = { this.state.audioData }
+                /> 
+            </ div >
         );
     }
 }

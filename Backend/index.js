@@ -1,11 +1,15 @@
 const express = require('express');
-const conection= require('./config/db');
+const conectarDB = require('./config/db');
+const cors = require('cors');
 
 //Crear el servidor
 const app = express();
 
 //Conectar a la base de datos
-conection();
+conectarDB();
+
+//habilitar cors
+app.use(cors());
 
 //Habilitar express.json
 app.use(express.json({ extended: true}));
@@ -17,6 +21,6 @@ const port = process.env.PORT || 4000
 app.use('/', require('./routes/audios'));
 
 //Arrancar server
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`El server esta corriendo en el puerto ${port}`);
 });

@@ -9,6 +9,7 @@ function App() {
 
   //State
   const[mostrar, setMostrar] = useState(false);
+  const[audio, setAudio] = useState({});
 
   return (
     <Fragment>
@@ -20,7 +21,9 @@ function App() {
       }
       <div className = "container mt-5">
         <Exhibitions
-          setMostrar = {setMostrar}
+          setMostrar = { setMostrar }
+          setAudio = { setAudio }
+          audio = { audio }
         />
       </div>
       <Footer/>
