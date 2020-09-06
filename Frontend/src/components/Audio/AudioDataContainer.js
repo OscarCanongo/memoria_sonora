@@ -36,13 +36,17 @@ class AudioDataContainer extends React.Component {
     render() {
 
         return ( 
-            < div >
-                < VisualDemo initializeAudioAnalyser = { this.initializeAudioAnalyser }
-                    frequencyBandArray = { this.frequencyBandArray }
-                    getFrequencyData = { this.getFrequencyData }
-                    audioData = { this.state.audioData }
-                /> 
-            </ div >
+            <div class="container-sm">
+                <div class="row">
+                    <div class="col-sm">
+                        < VisualDemo initializeAudioAnalyser = { this.initializeAudioAnalyser }
+                        frequencyBandArray = { this.frequencyBandArray }
+                        getFrequencyData = { this.getFrequencyData }
+                        audioData = { this.state.audioData }
+                        /> 
+                    </div>
+                </div>
+            </div>
         );
     }
 }

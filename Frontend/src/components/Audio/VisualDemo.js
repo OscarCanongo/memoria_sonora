@@ -11,7 +11,8 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    paddingTop: '25%'
+    paddingTop: '25%',
+    height: 200
   }
 }));
 
@@ -46,18 +47,22 @@ export default function VisualDemo(props) {
 
       <Fragment>
 
-          <div>
-            <Tooltip
-              title="Start"
-              aria-label="Start"
-              placement="right">
-              <IconButton
-                id='startButton'
-                onClick={() => handleStartBottonClick()}
-                disabled={!!props.audioData ? true : false}>
-                <EqualizerIcon/>
-              </IconButton>
-            </Tooltip>
+          <div class="container-sm">
+            <div class="row">
+              <div class="col-sm">
+                <Tooltip
+                  title="Start"
+                  aria-label="Start"
+                  placement="right">
+                  <IconButton
+                    id='startButton'
+                    onClick={() => handleStartBottonClick()}
+                    disabled={!!props.audioData ? true : false}>
+                  <EqualizerIcon/>
+                </IconButton>
+              </Tooltip>
+              </div>
+            </div>
           </div>
 
           <div className={classes.flexContainer}>
