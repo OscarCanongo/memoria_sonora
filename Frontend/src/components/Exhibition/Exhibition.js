@@ -11,7 +11,6 @@ const Exhibition = ({setMostrar, setAudio}) => {
         const getAudio = async () => {
             const response = await clienteAxios.get('/');
             setData(response.data.audios);
-            //console.log(response.data.audios)
         }
 
         getAudio();
@@ -22,36 +21,13 @@ const Exhibition = ({setMostrar, setAudio}) => {
         <Fragment>
             <h1 align="center">Exposición</h1>
             <div className = "row mt-5">
-                <CardAudio
-                    setMostrar = { setMostrar }
-                    audio = { data[0] }
-                    setAudio = { setAudio }
-                />
-                <CardAudio
-                    setMostrar = { setMostrar }
-                    audio = { data[0] }
-                    setAudio = { setAudio }
-                />
-                <CardAudio
-                    setMostrar = { setMostrar }
-                    audio = { data[0] }
-                    setAudio = { setAudio }
-                />
-                <CardAudio
-                    setMostrar = { setMostrar }
-                    audio = { data[0] }
-                    setAudio = { setAudio }
-                />
-                <CardAudio
-                    setMostrar = { setMostrar }
-                    audio = { data[0] }
-                    setAudio = { setAudio }
-                />
-                <CardAudio
-                    setMostrar = { setMostrar }
-                    audio = { data[0] }
-                    setAudio = { setAudio }
-                />
+                {
+                    data.map(element=><CardAudio
+                        setMostrar = { setMostrar }
+                        audio = { element }
+                        setAudio = { setAudio }
+                    />)
+                }
             </div>
         </Fragment>
     );
