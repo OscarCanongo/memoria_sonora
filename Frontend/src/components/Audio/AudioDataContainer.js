@@ -1,6 +1,7 @@
 import React from 'react';
 import VisualDemo from './VisualDemo';
 
+
 class AudioDataContainer extends React.Component {
 
     constructor(props) {
@@ -46,6 +47,7 @@ class AudioDataContainer extends React.Component {
                           frequencyBandArray = { this.frequencyBandArray }
                           getFrequencyData = { this.getFrequencyData }
                           audioData = { this.state.audioData }
+                          audioLink = { this.audioLink }
                         />
                     </div>
                 </div>
