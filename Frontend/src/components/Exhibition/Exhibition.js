@@ -1,17 +1,19 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import CardAudio from './CardAudio';
 import clienteAxios from './../../config/axios';
 
-const Exhibition = ({setMostrar, setAudio, audio}) => {
+const Exhibition = ({setMostrar, setAudio}) => {
+
+    const[data, setData] = useState([]);
 
     useEffect(() => {
-        
+
         const getAudio = async () => {
             const response = await clienteAxios.get('/');
-            setAudio(response.data.audios[0]);
-            console.log(response.data.audios[0].nombre)
+            setData(response.data.audios);
+            //console.log(response.data.audios)
         }
-        
+
         getAudio();
         // eslint-disable-next-line
     }, []);
@@ -22,27 +24,33 @@ const Exhibition = ({setMostrar, setAudio, audio}) => {
             <div className = "row mt-5">
                 <CardAudio
                     setMostrar = { setMostrar }
-                    audio = { audio }
+                    audio = { data[0] }
+                    setAudio = { setAudio }
                 />
                 <CardAudio
                     setMostrar = { setMostrar }
-                    audio = { audio }
+                    audio = { data[0] }
+                    setAudio = { setAudio }
                 />
                 <CardAudio
                     setMostrar = { setMostrar }
-                    audio = { audio }
+                    audio = { data[0] }
+                    setAudio = { setAudio }
                 />
                 <CardAudio
                     setMostrar = { setMostrar }
-                    audio = { audio }
+                    audio = { data[0] }
+                    setAudio = { setAudio }
                 />
                 <CardAudio
                     setMostrar = { setMostrar }
-                    audio = { audio }
+                    audio = { data[0] }
+                    setAudio = { setAudio }
                 />
                 <CardAudio
                     setMostrar = { setMostrar }
-                    audio = { audio }
+                    audio = { data[0] }
+                    setAudio = { setAudio }
                 />
             </div>
         </Fragment>

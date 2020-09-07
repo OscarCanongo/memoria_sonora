@@ -16,14 +16,15 @@ function App() {
       <Introduction/>
       <Description/>
       { mostrar
-        ? <VisualDemo/>
+        ? <VisualDemo
+            audio = { audio }
+          />
         : null
       }
       <div className = "container mt-5">
         <Exhibitions
           setMostrar = { setMostrar }
           setAudio = { setAudio }
-          audio = { audio }
         />
       </div>
       <Footer/>
