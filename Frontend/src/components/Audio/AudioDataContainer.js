@@ -47,6 +47,7 @@ class AudioDataContainer extends React.Component {
                           frequencyBandArray = { this.frequencyBandArray }
                           getFrequencyData = { this.getFrequencyData }
                           audioData = { this.state.audioData }
+                          audioLink = { this.audioLink }
                         />
                     </div>
                 </div>

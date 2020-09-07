@@ -91,7 +91,9 @@ export default function VisualDemo(props) {
               order="standart"
               preload="auto"
               loop={true}
-              src={"no se que poner aqui"}
+              autoplay = {true}
+              src={props.audioLink}
+              onClick={console.log("HOLA")}
             />
           </ThemeProvider>
         </div>
