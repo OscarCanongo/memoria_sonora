@@ -5,6 +5,10 @@ import Tooltip from '@material-ui/core/Tooltip';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import { makeStyles } from '@material-ui/core/styles';
 import './stylesheets/App.scss';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import AudioPlayer from "material-ui-audio-player";
+
+const muiTheme = createMuiTheme({});
 
 const useStyles = makeStyles(theme => ({
   flexContainer: {
@@ -74,6 +78,25 @@ export default function VisualDemo(props) {
                 key={num}
               />
             )}
+          </div>
+              
+          <div class="row">
+            <div class="col-sm">
+              <ThemeProvider theme={muiTheme}>
+                <AudioPlayer
+                  elevation={1}
+                  width="100%"
+                  variation="default"
+                  spacing={3}
+                  download={false}
+                  autoplay={true}
+                  order="standart"
+                  preload="auto"
+                  loop={true}
+                  src={!!props.audioData ? true : false}
+                />
+              </ThemeProvider>
+            </div>
           </div>
 
       </Fragment>
