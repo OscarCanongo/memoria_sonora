@@ -1,4 +1,4 @@
-import React, { useRef, Fragment } from "react";
+import React, { useRef, Fragment, useEffect } from "react";
 import Paper from "@material-ui/core/Paper";
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
@@ -21,6 +21,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function VisualDemo(props) {
+
+  useEffect(() => {
+
+      handleStartBottonClick();
+
+      // eslint-disable-next-line
+  }, []);
+
   const classes = useStyles();
 
   const amplitudeValues = useRef(null);
@@ -46,26 +54,11 @@ export default function VisualDemo(props) {
 
   function handleStartBottonClick() {
     props.initializeAudioAnalyser();
-    requestAnimationFrame(runSpectrum);
+    requestAnimationFrame(runSpectrum)
   }
 
   return (
-    <Fragment>
-      <div class="container-sm">
-        <div class="row">
-          <div class="col-sm">
-            <Tooltip title="Start" aria-label="Start" placement="right">
-              <IconButton
-                id="startButton"
-                onClick={() => handleStartBottonClick()}
-                disabled={!!props.audioData ? true : false}
-              >
-                <EqualizerIcon />
-              </IconButton>
-            </Tooltip>
-          </div>
-        </div>
-      </div>
+
 
       <div className={classes.flexContainer}>
         {props.frequencyBandArray.map((num) => (
@@ -78,26 +71,6 @@ export default function VisualDemo(props) {
         ))}
       </div>
 
-      <div class="row">
-        <div class="col-sm">
-          <ThemeProvider theme={muiTheme}>
-            <AudioPlayer
-              elevation={1}
-              width="100%"
-              variation="default"
-              spacing={3}
-              download={false}
-              autoplay={true}
-              order="standart"
-              preload="auto"
-              loop={true}
-              autoplay = {true}
-              src={props.audioLink}
-              onClick={console.log("HOLA")}
-            />
-          </ThemeProvider>
-        </div>
-      </div>
-    </Fragment>
+
   );
 }
