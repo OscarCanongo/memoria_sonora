@@ -8,16 +8,18 @@ class AudioDataContainer extends React.Component {
         super(props);
         this.state = {}
         this.frequencyBandArray = [...Array(25).keys()]
+        this.audioLink = props.audio.audio
     }
 
+
     initializeAudioAnalyser = () => {
-        
+
         const audioFile = new Audio();
         audioFile.crossOrigin = "anonymous";
         const audioContext = new AudioContext();
         const source = audioContext.createMediaElementSource(audioFile);
         const analyser = audioContext.createAnalyser();
-        audioFile.src = "https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/memoriasonora-e2da7.appspot.com/o/Copia%20de%20Adriana%20Carvente.mp3?alt=media&token=ab424f7d-e02e-41a8-85be-891022d18c3e";
+        audioFile.src = "https://cors-anywhere.herokuapp.com/"+this.audioLink;
         analyser.fftSize = 64
         source.connect(audioContext.destination);
         source.connect(analyser);
@@ -36,15 +38,16 @@ class AudioDataContainer extends React.Component {
 
     render() {
 
-        return ( 
+        return (
             <div class="container-sm">
                 <div class="row">
                     <div class="col-sm">
-                        < VisualDemo initializeAudioAnalyser = { this.initializeAudioAnalyser }
-                        frequencyBandArray = { this.frequencyBandArray }
-                        getFrequencyData = { this.getFrequencyData }
-                        audioData = { this.state.audioData }
-                        /> 
+                        < VisualDemo
+                          initializeAudioAnalyser = { this.initializeAudioAnalyser }
+                          frequencyBandArray = { this.frequencyBandArray }
+                          getFrequencyData = { this.getFrequencyData }
+                          audioData = { this.state.audioData }
+                        />
                     </div>
                 </div>
             </div>

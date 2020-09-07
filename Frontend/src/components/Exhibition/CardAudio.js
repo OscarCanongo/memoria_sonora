@@ -3,15 +3,16 @@ import IconButton from '@material-ui/core/IconButton';
 import imagen from "./Imagenes/ola.svg";
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
-const CardAudio = ({setMostrar, audio}) => {
+const CardAudio = ({setMostrar, audio, setAudio}) => {
 
   const onClickMostrar = () => {
     setMostrar(true);
+    setAudio(audio);
   }
 
-  console.log(audio);
+  //console.log(audio);
 
-  if(!audio) 
+  if(!audio)
   return null;
 
   return (

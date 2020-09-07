@@ -1,17 +1,18 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import CardAudio from './CardAudio';
 import clienteAxios from './../../config/axios';
 
-const Exhibition = ({setMostrar, setAudio, audio}) => {
+const Exhibition = ({setMostrar, setAudio}) => {
+
+    const[data, setData] = useState([]);
 
     useEffect(() => {
-        
+
         const getAudio = async () => {
             const response = await clienteAxios.get('/');
-            setAudio(response.data.audios[0]);
-            console.log(response.data.audios[0].nombre)
+            setData(response.data.audios);
         }
-        
+
         getAudio();
         // eslint-disable-next-line
     }, []);
@@ -20,30 +21,13 @@ const Exhibition = ({setMostrar, setAudio, audio}) => {
         <Fragment>
             <h1 align="center">Exposición</h1>
             <div className = "row mt-5">
-                <CardAudio
-                    setMostrar = { setMostrar }
-                    audio = { audio }
-                />
-                <CardAudio
-                    setMostrar = { setMostrar }
-                    audio = { audio }
-                />
-                <CardAudio
-                    setMostrar = { setMostrar }
-                    audio = { audio }
-                />
-                <CardAudio
-                    setMostrar = { setMostrar }
-                    audio = { audio }
-                />
-                <CardAudio
-                    setMostrar = { setMostrar }
-                    audio = { audio }
-                />
-                <CardAudio
-                    setMostrar = { setMostrar }
-                    audio = { audio }
-                />
+                {
+                    data.map(element=><CardAudio
+                        setMostrar = { setMostrar }
+                        audio = { element }
+                        setAudio = { setAudio }
+                    />)
+                }
             </div>
         </Fragment>
     );
