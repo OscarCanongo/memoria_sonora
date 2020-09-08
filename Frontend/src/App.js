@@ -10,6 +10,7 @@ function App() {
   //State
   const[mostrar, setMostrar] = useState(false);
   const[audio, setAudio] = useState({});
+  //console.log(audio);
 
   return (
     <Fragment>
