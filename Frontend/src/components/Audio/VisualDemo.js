@@ -20,14 +20,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function VisualDemo(props) {
+export default function VisualDemo({initializeAudioAnalyser, frequencyBandArray, getFrequencyData, audioData, audioLink}) {
 
   useEffect(() => {
 
       handleStartBottonClick();
 
       // eslint-disable-next-line
-  }, []);
+  }, [audioLink]);
 
   const classes = useStyles();
 
@@ -35,11 +35,11 @@ export default function VisualDemo(props) {
 
   function adjustFreqBandStyle(newAmplitudeData) {
     amplitudeValues.current = newAmplitudeData;
-    let domElements = props.frequencyBandArray.map((num) =>
+    let domElements = frequencyBandArray.map((num) =>
       document.getElementById(num)
     );
-    for (let i = 0; i < props.frequencyBandArray.length; i++) {
-      let num = props.frequencyBandArray[i];
+    for (let i = 0; i < frequencyBandArray.length; i++) {
+      let num = frequencyBandArray[i];
       domElements[
         num
       ].style.backgroundColor = `rgb(0, 0, ${amplitudeValues.current[num]})`;
@@ -48,12 +48,12 @@ export default function VisualDemo(props) {
   }
 
   function runSpectrum() {
-    props.getFrequencyData(adjustFreqBandStyle);
+    getFrequencyData(adjustFreqBandStyle);
     requestAnimationFrame(runSpectrum);
   }
 
   function handleStartBottonClick() {
-    props.initializeAudioAnalyser();
+    initializeAudioAnalyser();
     requestAnimationFrame(runSpectrum)
   }
 
@@ -61,7 +61,7 @@ export default function VisualDemo(props) {
 
 
       <div className={classes.flexContainer}>
-        {props.frequencyBandArray.map((num) => (
+        {frequencyBandArray.map((num) => (
           <Paper
             className={"frequencyBands"}
             elevation={4}
