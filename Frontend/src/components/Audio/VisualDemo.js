@@ -24,6 +24,7 @@ export default function VisualDemo({initializeAudioAnalyser, frequencyBandArray,
 
   useEffect(() => {
 
+
       handleStartBottonClick();
 
       // eslint-disable-next-line

@@ -1,20 +1,19 @@
 import React from 'react';
 import VisualDemo from './VisualDemo';
+let audioFile = new Audio();
 
 
 const AudioDataContainer = ({audio}) => {
 
-
     let state = {};
     let frequencyBandArray = [...Array(25).keys()];
 
-
-    console.log(audio);
-
+    //console.log(audio);
 
     const initializeAudioAnalyser = () => {
-
-        const audioFile = new Audio();
+        audioFile.pause();
+        //console.log(audioFile.src)
+        audioFile = new Audio();
         audioFile.crossOrigin = "anonymous";
         const audioContext = new AudioContext();
         const source = audioContext.createMediaElementSource(audioFile);
@@ -45,7 +44,7 @@ const AudioDataContainer = ({audio}) => {
                           frequencyBandArray = { frequencyBandArray }
                           getFrequencyData = { getFrequencyData }
                           audioData = { state.audioData }
-                          audioLink = { audio.audio }
+                          audioLink = { audio }
                         />
                     </div>
                 </div>
