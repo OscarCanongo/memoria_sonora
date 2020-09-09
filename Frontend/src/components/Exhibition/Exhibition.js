@@ -30,7 +30,7 @@ const Exhibition = ({setMostrar, setAudio}) => {
 
     return (
         <div className = "row mt-5" breakPoints={breakPoints}>
-            <Carousel itemsToShow={4}>
+            <Carousel itemsToShow={6}>
                 {data.map((element) => (
                 <CardAudio
                     setMostrar={setMostrar}
