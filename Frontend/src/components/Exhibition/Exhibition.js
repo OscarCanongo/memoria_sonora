@@ -1,8 +1,19 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import CardAudio from './CardAudio';
 import clienteAxios from './../../config/axios';
+import Carousel from "react-elastic-carousel";
 
 const Exhibition = ({setMostrar, setAudio}) => {
+    
+    
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+        { width: 850, itemsToShow: 3 },
+        { width: 1150, itemsToShow: 4, itemsToScroll: 2 },
+        { width: 1450, itemsToShow: 5 },
+        { width: 1750, itemsToShow: 6 },
+    ]
 
     const[data, setData] = useState([]);
 
@@ -18,18 +29,18 @@ const Exhibition = ({setMostrar, setAudio}) => {
     }, []);
 
     return (
-        <Fragment>
-            <h1 align="center">Exposición</h1>
-            <div className = "row mt-5">
-                {
-                    data.map(element=><CardAudio
-                        setMostrar = { setMostrar }
-                        audio = { element }
-                        setAudio = { setAudio }
-                    />)
-                }
-            </div>
-        </Fragment>
+        <div className = "row mt-5" breakPoints={breakPoints}>
+            <Carousel itemsToShow={6}>
+                {data.map((element) => (
+                <CardAudio
+                    setMostrar={setMostrar}
+                    audio={element}
+                    setAudio={setAudio}
+                />
+                ))}
+            </Carousel>
+        </div>
+    
     );
 }
 

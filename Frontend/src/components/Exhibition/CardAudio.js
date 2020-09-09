@@ -2,8 +2,13 @@ import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import imagen from "./Imagenes/ola.svg";
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 
-const CardAudio = ({setMostrar, audio, setAudio}) => {
+const CardAudio = ({ setMostrar, audio, setAudio }) => {
 
   const onClickMostrar = () => {
     setMostrar(true);
@@ -16,22 +21,29 @@ const CardAudio = ({setMostrar, audio, setAudio}) => {
   return null;
 
   return (
-      <div className = "col-md-4 mb-3">
-        <div className = "card">
-          <h2 align="center">{audio.nombre}</h2>
-          <p align="center">31 años </p>
-          <img src = {imagen} alt={`Audio`} width= '100%' height='100'/>
-          <div className = "card-body col text-center">
-            <IconButton className ="btn btn-secondary">
-              <PlayCircleOutlineIcon
-                style={{ fontSize: 50 }}
-                onClick={onClickMostrar}
-              />
-            </IconButton>
-          </div>
+      <Card class="card">
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2" className="text-center">
+            {audio.nombre}
+          </Typography>
+        </CardContent>
+        <CardMedia
+          component="img"
+          height="100"
+          width="100"
+          image={imagen}
+        />
+      <CardActions>
+        <div className="card-body col text-center">
+          <IconButton className ="btn btn-secondary"> 
+            <PlayCircleOutlineIcon
+              style={{ fontSize: 50 }}
+              onClick={onClickMostrar}
+            />
+          </IconButton>
         </div>
-      </div>
-
+      </CardActions>
+    </Card>
     );
 }
 
