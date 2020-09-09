@@ -18,6 +18,7 @@
     "material-ui-audio-player": "^1.2.0",
     "mdbreact": "^4.27.0",
     "node-sass": "^4.14.1",
+    "particles-bg": "^2.5.0",
     "react": "^16.13.1",
     "react-audio-player": "^0.13.0",
     "react-dom": "^16.13.1",

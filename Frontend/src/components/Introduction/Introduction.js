@@ -1,11 +1,13 @@
 import React from 'react';
 import Logo from '../../images/memoria_sonora_logo.png';
 import './Introduction.css';
+import ParticlesBg from 'particles-bg';
 
 const Header = () => {
     return (
-        <div className="bg">
-            <img className = "imagen" class="img-fluid" src={Logo} alt="Memoria Sonora Logo"></img>
+        <div>
+            <img className="imagen" class="img-fluid" src={Logo} alt="Memoria Sonora Logo"></img>
+            <ParticlesBg type="cobweb" bg={true}/>
         </div>
     );
 }
