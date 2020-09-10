@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexWrap: "nowrap",
     justifyContent: "center",
-    paddingTop: "30%",
+    paddingTop: "35%",
     height: 200,
     flex: "1 0 auto",
     overflow: "hidden",
