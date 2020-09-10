@@ -8,11 +8,12 @@ import "./stylesheets/App.scss";
 const useStyles = makeStyles((theme) => ({
   flexContainer: {
     display: "flex",
-    flexWrap: "wrap",
+    flexWrap: "nowrap",
     justifyContent: "center",
     paddingTop: "30%",
     height: 200,
     flex: "1 0 auto",
+    overflow: "hidden",
   },
 }));
 
