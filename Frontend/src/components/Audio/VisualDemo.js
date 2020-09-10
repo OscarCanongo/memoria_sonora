@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     height: 200,
     flex: "1 0 auto",
     overflow: "hidden",
+    marginTop: "80px"
   },
 }));
 
