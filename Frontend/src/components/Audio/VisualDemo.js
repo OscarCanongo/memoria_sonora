@@ -1,14 +1,9 @@
-import React, { useRef, Fragment, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import Paper from "@material-ui/core/Paper";
-import IconButton from "@material-ui/core/IconButton";
-import Tooltip from "@material-ui/core/Tooltip";
-import EqualizerIcon from "@material-ui/icons/Equalizer";
 import { makeStyles } from "@material-ui/core/styles";
 import "./stylesheets/App.scss";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
-import AudioPlayer from "material-ui-audio-player";
 
-const muiTheme = createMuiTheme({});
+
 
 const useStyles = makeStyles((theme) => ({
   flexContainer: {
