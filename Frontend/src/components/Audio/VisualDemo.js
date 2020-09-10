@@ -15,8 +15,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
-    paddingTop: "25%",
+    paddingTop: "30%",
     height: 200,
+    flex: "1 0 auto",
   },
 }));
 
@@ -43,7 +44,7 @@ export default function VisualDemo({initializeAudioAnalyser, frequencyBandArray,
       let num = frequencyBandArray[i];
       domElements[
         num
-      ].style.backgroundColor = `rgb(0, 0, ${amplitudeValues.current[num]})`;
+      ].style.backgroundColor = `rgb(136, 0, ${amplitudeValues.current[num]})`;
       domElements[num].style.height = `${amplitudeValues.current[num]}px`;
     }
   }

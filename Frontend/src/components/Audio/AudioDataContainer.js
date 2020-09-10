@@ -6,7 +6,7 @@ let audioFile = new Audio();
 const AudioDataContainer = ({audio}) => {
 
     let state = {};
-    let frequencyBandArray = [...Array(25).keys()];
+    let frequencyBandArray = [...Array(20).keys()];
 
     //console.log(audio);
 
@@ -38,7 +38,7 @@ const AudioDataContainer = ({audio}) => {
         return (
             <div class="container-sm">
                 <div class="row">
-                    <div class="col-sm">
+                    <div class="container-sm">
                         < VisualDemo
                           initializeAudioAnalyser = { initializeAudioAnalyser }
                           frequencyBandArray = { frequencyBandArray }
