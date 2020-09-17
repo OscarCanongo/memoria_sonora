@@ -10,7 +10,7 @@ const Description = () => {
       <div class="container-sm">
         <div class="row">
           <div class="col-sm">
-            <h1 class="text-center">Museo Urbano Interactivo</h1>
+            <h1 class="text-center">Descripcion del proyecto</h1>
           </div>
         </div>
 
