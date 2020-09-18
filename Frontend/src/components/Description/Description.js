@@ -18,12 +18,9 @@ const Description = () => {
               <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <div class="txt" >
                     <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
-                        El MUI (Museo Urbano Interactivo) busca ser un espacio físico
-                        y conceptual, en donde se desarrollan personas conscientes,
-                        capaces de producir un México con futuro en el que llega a ser
-                        una alternativa global.A través de las herramientas propias
-                        de las industrias creativas y las prácticas artísticas actuales.
-                        Lo que hace el contexto en que está situado.
+                        "Memoria Sonora es un proyecto de documentación gestado durante la Residencia COVID,
+                        tiene como  objetivo recopilar audios del sentir de las personas durante el COVID,
+                        con esta información el MUI realiza ejercicios sonoros."
                     </SplitText>
                 </div>
               </div>
