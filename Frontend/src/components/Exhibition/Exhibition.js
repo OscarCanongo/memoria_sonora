@@ -7,12 +7,10 @@ const Exhibition = ({setMostrar, setAudio}) => {
     
     
     const breakPoints = [
-        { width: 1, itemsToShow: 1 },
-        { width: 550, itemsToShow: 2, itemsToScroll: 2 },
-        { width: 850, itemsToShow: 3 },
-        { width: 1150, itemsToShow: 4, itemsToScroll: 2 },
-        { width: 1450, itemsToShow: 5 },
-        { width: 1750, itemsToShow: 6 },
+        { width: 1, itemsToShow: 1, itemsToScroll: 2 },
+        { width: 300, itemsToShow: 3 },
+        { width: 550, itemsToShow: 5 },
+        { width: 850, itemsToShow: 6 },
     ]
 
     const[data, setData] = useState([]);
@@ -29,8 +27,8 @@ const Exhibition = ({setMostrar, setAudio}) => {
     }, []);
 
     return (
-        <div className = "row mt-5" breakPoints={breakPoints}>
-            <Carousel itemsToShow={6}>
+        <div className = "row mt-5" >
+            <Carousel breakPoints={breakPoints}>
                 {data.map((element) => (
                 <CardAudio
                     setMostrar={setMostrar}
