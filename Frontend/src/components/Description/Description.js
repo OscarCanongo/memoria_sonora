@@ -15,7 +15,6 @@ const Description = () => {
         </div>
 
             <div className = "row">
-              <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <div class="txt" >
                     <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
                         "Memoria Sonora es un proyecto de documentación gestado durante la Residencia COVID,
@@ -24,9 +23,7 @@ const Description = () => {
                     </SplitText>
                 </div>
               </div>
-              <div className = "col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-              </div>
+              <div className = "row">
               <div className = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
               <div class = "img-fluid">
                 <HoverImage src={imagen} hoverSrc={yourFileHover}  class="img-fluid float-right width: 100%" style={{width : '100%'}} alt="MuiLogo"/>
