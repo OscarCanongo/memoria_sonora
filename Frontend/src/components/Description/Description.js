@@ -20,7 +20,7 @@ const Description = () => {
                         "Memoria Sonora es un proyecto de documentación gestado durante la Residencia COVID,
                         tiene como  objetivo recopilar audios del sentir de las personas durante el COVID,
                         con esta información el MUI realiza ejercicios sonoros."
-                    </SplitText>
+                    </SplitText> 
                 </div>
               </div>
               <div class="text-center">
