@@ -1,7 +1,9 @@
 import React from 'react';
 import VisualDemo from './VisualDemo';
-let audioFile = new Audio();
+import "./stylesheets/index.scss";
 
+
+let audioFile = new Audio();
 
 const AudioDataContainer = ({audio}) => {
 
@@ -38,14 +40,14 @@ const AudioDataContainer = ({audio}) => {
         return (
             <div class="container-sm">
                 <div class="row">
-                    <div class="container-sm">
-                        < VisualDemo
-                          initializeAudioAnalyser = { initializeAudioAnalyser }
-                          frequencyBandArray = { frequencyBandArray }
-                          getFrequencyData = { getFrequencyData }
-                          audioData = { state.audioData }
-                          audioLink = { audio }
-                        />
+                    <div class="bg">
+                          < VisualDemo
+                            initializeAudioAnalyser = { initializeAudioAnalyser }
+                            frequencyBandArray = { frequencyBandArray }
+                            getFrequencyData = { getFrequencyData }
+                            audioData = { state.audioData }
+                            audioLink = { audio }
+                          />
                     </div>
                 </div>
             </div>
