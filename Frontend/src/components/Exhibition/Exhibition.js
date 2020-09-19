@@ -9,7 +9,7 @@ const Exhibition = ({setMostrar, setAudio}) => {
     const breakPoints = [
         { width: 1, itemsToShow: 1, itemsToScroll: 2 },
         { width: 300, itemsToShow: 3 },
-        { width: 550, itemsToShow: 5 },
+        { width: 550, itemsToShow: 4 },
         { width: 850, itemsToShow: 6 },
     ]
 
