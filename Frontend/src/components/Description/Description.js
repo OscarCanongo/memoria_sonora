@@ -4,7 +4,7 @@ import yourFileHover from '../../images/morado.png';
 import './Description.css';
 import SplitText from 'react-pose-text';
 import HoverImage from "react-hover-image";
-
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 const Description = () => {
     return (
       <div class="container-sm">
@@ -23,12 +23,9 @@ const Description = () => {
                     </SplitText>
                 </div>
               </div>
-              <div className = "row">
-              <div className = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
-              <div class = "img-fluid">
-                <HoverImage src={imagen} hoverSrc={yourFileHover}  class="img-fluid float-right width: 100%" style={{width : '100%'}} alt="MuiLogo"/>
-              </div>
-              </div>
+              <div class="text-center">
+                <HoverImage src={imagen} hoverSrc={yourFileHover}  class="img-fluid width: 100%" style={{width : '35%'}} alt="MuiLogo"/>
+            
             </div>
       </div>
     );
