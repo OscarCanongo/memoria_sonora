@@ -41,7 +41,7 @@ export default function VisualDemo({initializeAudioAnalyser, frequencyBandArray,
       let num = frequencyBandArray[i];
       domElements[
         num
-      ].style.backgroundColor = `rgb(20,${amplitudeValues.current[num]},92 )`;
+      ].style.backgroundColor = `rgb(0,${amplitudeValues.current[num]},${amplitudeValues.current[num]})`;
       domElements[num].style.height = `${amplitudeValues.current[num]}px`;
     }
   }
