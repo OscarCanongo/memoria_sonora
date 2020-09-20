@@ -21,7 +21,7 @@ const CardAudio = ({ setMostrar, audio, setAudio }) => {
   return null;
 
   return (
-      <Card class="card">
+      <Card className="card">
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2" className="text-center">
             {audio.nombre}
