@@ -38,9 +38,9 @@ const AudioDataContainer = ({audio}) => {
     }
 
         return (
-            <div class="container-sm">
-                <div class="row">
-                    <div class="bg">
+            <div className="container-sm">
+                <div className="row">
+                    <div className="bg">
                           < VisualDemo
                             initializeAudioAnalyser = { initializeAudioAnalyser }
                             frequencyBandArray = { frequencyBandArray }
