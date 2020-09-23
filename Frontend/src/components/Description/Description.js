@@ -9,7 +9,7 @@ const Description = () => {
       <div className="container-sm">
         <div className="row">
           <div className="col-sm">
-            <h1 className="text-center">Descripcion del proyecto</h1>
+            <h1 className="text-center">Descripción del proyecto</h1>
           </div>
         </div>
 
